@@ -13,21 +13,21 @@ Exercise 1 - retrieving US Census language use data
 import requests
 # Use a URL example in a browser to see the result returned and the use request to access with python
 # http://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=state:06&LAN=625
-r = requests.get('http://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=state:06&LAN=625')
+r = requests.get('http://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=state:06&LAN=625:650')
+
 
 # modify the request to get languges 625 through 650 so we can see a larger sample of what is returned from the request
 # Hint the syntax for more than one language number is similar to one we use for multiple elements in a list
 
-
 # check the status: 200 means success, 4xx means error
-
+r.status_code
+r.text
 
 # view the raw response text
 
 
 # Convert to json()
-
-
+r.json()
 # 
 #look at the contents of the output of the json() method.  It looks like it can easily become a list of lists
 
